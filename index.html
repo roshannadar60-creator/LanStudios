@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LAN Studios — Next-Gen Digital Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- ════ NAV ════ -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCADIAMgDASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAcIBgkDBAUBAv/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/aAAwDAQACEAMQAAABqoAAAAAAAAAAAAAAAAAAcpxPR6ZxAAAAAAAAAPtlSC7F2Z7xgOccwcPMMBha041m47tGqeVpffgAAAAA+/LKGZWOQKTtyUxudTqEfX5ZBU2uTTqK99aJsaVQmmQ062p0/vz1rAAAABkWySs1pxXqwtaYn257x3Iq7ocyWlC3zYDrau/Tpr30ezMaJgr33/Yi8/dHvN/K1m47a2qQAAAOQ2I5/wAOPwyam0h9bi6OWO5s/PTpFll8XkiYhCLrIV0icQvDBs85V162c9bv67SWNfPwDXVtO1anGAAB6PnchtQopeWI8phmfqizb5umPWw14210iWurVzH6zdSo+U1o9HK1+eR50fI2sLyUekfprZX9a7LKUmwurzZ7q19XLjAAABsWgX0bB0Uusp3svxtTyZJb+QpT+beejCsUe3f6WsRFwzn38pp/ms1+9KoWTz7kVJxzXTa2qXbQAAADIru0AssS36EpjDMImoRn40yiKuKWhFfqSAIz86XRFXqyBUEgvHQAAAAffguNY7VZZMuA6PeAAADo1NMyp0+AAAAAAAGRWLqkNi2casf2bUeHWB0zYnC1UhkWOgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/8QALRAAAQQCAQIFAgYDAAAAAAAABQIDBAYBBwAQMBETFSAiFjESFBc1QGAhJjb/2gAIAQEAAQUC/qyG1u59OlcW2trP8MNXiB94LpTHgOoYEXxplthPHWW30kaGBKcNaUx4Ga8QAPd778pepnJmIUGOOje+bBjkY101M5Cxn/Hd1xrlI1HEOJcx2dka5SRR29T0rE53m2zpEOJ1RLIzT3S82b6WBa5ts6VZObL2BJrsjV9ulGXua9NTrBdObYpWILvZrwZywGYMJkdD5uvP+uaeEYhV/ohlFst6WHKvbhxJgpH2+9+auIdiRRbednYhgNJRfhydCZIw7AGcAGexpQJ8em63Uri16DgaD5eLA9Wq9AvBUXEJSJs5/WDrK6tIx9Q7U28EVIGKsaSWrtNs/gr3TdYX49ihjfS6j02GYYlX6Xugc1yduGe/LuFhVbEDq+OEo2+PxLqep7BiAnV/jMukmO3Mj2CJIqcnUX/MdL6O9UqPvbR5jjLWGGT1ig1qGndApUibQYN5ON6nrbfJOpa4+iJQRUIxyz1xNnHZrgzWxOhU4fEm4VhXL/R026HQK5IrQLo81h9lxHlue4d+4c23MfkXCHVarZYNCqyqqGl2YpF2ay+h9KX21q9RjZk83fISqY5WZ7uvaUNlCgDj7bPEqwvD0hqPhDyHOhH9w9za/KcZdw+zZ60GvEm00EnUOVawmbDSYwiYet8Kp/S1N0i3lUiAnH6wbNu0yBLswWeDn7Rxn6Dpp3IHWYOoldio1zcJLgFmRHsk7WFfWMU87hhlxfmOe+hkfVKjsiASrdmsOyp1jD6urrgKunJq6psynmSdtAUy7KpiKoTfXfdjsS67ebeeftkq6yXF6sEApBvUNX2O5VA2qa8RZhEDAR7mlYczM2+EfS6j2NKG/hKMwULCkas43myiUpm+mEZqT4aIw9Iqq5rRYLIlmjQdAEdYa/KizDAKW2owPiDcz69MU5ZBTOZREAUbGzx8nm6zfx7FfMuADJCqDriqRq8a9iTr2DJHy63h+ZjVsNEV6hQpEUhrmK7CEU3Cq87rUYqfA19EGsNU6OyDmUWOQjL1xFUuXr6PNehBB9QbsBhw+Z7OprpiE73ds3TE13tfbmudjpIo7extjpHI+/dpW2FwcQpscjH982dHHRrrthc7HfDWEjX3gu608HXwCU4082+njrzbCSN8Ai+Gt1p8DNhI2B7+GlWUZ9QleClZXn+rf//EADARAAEDAgQBCQkAAAAAAAAAAAECAxEAIQQSMYETECAiMEFxkaGxQlBRYGGSwdHh/9oACAEDAQE/Afdb7baMpbVIO3I8yGwhSTIUP5TTHFQohVxeKZbDpIJixPgJ6gAqMCsQRxSBoLeFqYySStUVZeFUnXIbHv8Apt51h1pw2R5Q1Jnu0PjJosHDqeR8Bbci+46holpYdF4oYnKZQgDz9SafcbXPDTFyduwbVhnUtlSV6KBH684p5QKUJHYPyT6RQxGZpSHD2AD7p54E6VZVT0b0AJHIfaFAA0EiJ52lSTWYi1ZjaptFZtazGsx+Rf/EADARAAIBAwIDBgMJAAAAAAAAAAECEQADMQQSIUGREyBhcYGxUcHREBQwQlBSYKHh/9oACAECAQE/Af0tSTn7FaZBotBpjH4K4pp5Vh/OmG+Vrdu2nv4r7zbZuyMgnEjNbZ4TSgjNXMT8Ks3UuDcpzW2DI79y4loS5iiLundQ53qTzyDy8/eghXU70iSBuHXjP+U968tq8wIlPDwB+NSd0VaMrpngceslSZ9+tXL9y2wbgUJjxHL148DV3UXEvBAR5EEdGxPp3mVXUqwkUlhLYCrgU+nR37Q54f1P1p9MjrcX9+ekV2S7+054pdMqKij8n0I+dDT21kDmZ9Zn3oaVApTiRn5/wX//xABIEAACAQICBAkIBwUGBwAAAAABAgMEEQAFEhMhMRAUIjJBUVJhcSMwgZGhscHRJEJDU2JywjNAY+HwBiBggrLSFRY0c3ST8v/aAAgBAQAGPwL/AAtZFLHuGP8Appv/AFnFnUqe8fumqoKV5z0kc1fE4V81rbn7mmH6j8sDU5bCzdqbyh9uNGNFjXqUW4NGRFkXqYXwddlsKt2ofJn2YZ8qrbH7mpH6h8saqvpXgPQTzW8D+4JWZ0Ghh3rSjYzfm6sJBSwpBCu5EFh5h6eqhSeFt6OLjD1mShpod7Up2sv5evz0eaZnHesPKihb7LvPf7uC6sGHcfNSZplkdqwcqWFfte8d/v8AODOqxLwRt9HQ/Wbtejgp46O8UNQxSWdTtHUo8dvqxqxK3F410pD3dXDJUoA1S/IhU9rr9GFWsqWl1xs1+m/87cEeX0AC1DJrHmO3RHUMS01ZMZGtddI32/17uCqqJZjJHyj4LtsPdwHOqNLQSN9IQfVbtenzVLQRb5msT2V6T6sQ0sCaEMShFXu4KP8A8of6Ww9WR5Spf2DhneVdZl+WrqlU7mkbfiSnvZoJigP+k+7AlgcOLC9ug9WFhXaY4ET0m5+OIYqjspJftAj/AOhiuq1OxKd3B/y7MZhP07F/r1cE1LUJpwyqUZe7FVQS74WsD2l6D6vM1uauu39hEfa3w4cppB+1klZh6rfHFFTAW0Ihs7+CetgiEktwguebfpxxeln1Sk6TEb2PXfHHazWM8v2rjnW78QpFvRuV3323xLflJxrQ9C8n4Yp82gXy9E3K/IfkfecZiNLysUQT/KSAPliZ+lpP69/DRZqi/wACU+1fj5nLYbcox6xvFuV8eGCOd/otCFVrde8/DH0ekkl8TbCNDGIIh1b/AJHH9n8tWwedtbMo3b9FfjhRS0UENvrLGL+vBmtd6aVX9G4+/FZDIeQIme35QW/3Yjmk5TtpOfGxOJIJl04pFKMp6RjM8ldjqntoN20uCPd7MH/ufAcOZQ2uwj1i+K8r4eYVBvY2wka81FCjHGK6bVqdiqNrOe4YCcXqEi+8Kj54/wCNR5h9BqFBdIhyiQLbD6MDSpZJPzTN8MWSnlpj2o5mPvviDMI0fWQxCNIyeSLfW8eA0ctVNTwnawityuq9xjX5lXmtilQiOmjjs7dB0u7D51RVDSUsy3p4zvS973xsN8I8LLFXw8x23MOycLDVMOMOdJkXcvdwvG3NdSpwyHept/fpr/er7+CaGW+qgRFiHcRcn14jiyyvenzAJ9qeee9T+nGolnE80j6xtHmr3DEtLJX/AETXaBRzaNUtf0YBRgw68WVwT3YanE8ZnXnRhto8eDK4Ra6o7E9O8fLFBQ5ZVihkCCSUsxXS6SL9G04p4K2o4xUjnG97bdgvgabhb7r4uDfF5HVPE45LX4Km27Wt7/76uN6m+EkXmuAwxLEZ9TmFJ5NpY969NmHSMCocrNS6VlqIug9Fx0Yrkonvm1PZUk2XbaD09NrjHEMxlaKslkImc8oggfyxmtIK6WZzFK2t5ujyegdGMzkLGwCC19n1sSLDyF4zKCB+U3xFk2VMVqpANY6c7buUYSHMn06mSMSnl6Vr9Z9GI9CRlUSJcLubxw+YzHWmLSEasfxWUevFXmlTX2YGyGQX0m6h1DGYQyhqipoIi6X3uLGw9mJ6jPM2lp5mPJfU6wfyxPOmbx11C2yKOHdfrPUe7DyNzUUscM53sb+Yy2a92EWrbxXk/DH/ADBQFkhmCh3XcGAtZu44OXSQRxIxBdk6bYDTqUqKptayneo6Biqrp6cyBZWlVL20gym2304z6apjPlRIsNt21OaPD44rl4pr5ZrW0m0dEi+/14pK2oVtdUzMWCr2wfnhM5EenHKUkjLc26qAV9mEzJqNqeFFEGlfSF9p34y5pwVllMOw/lxxeBbzEtJGvatIdmJMv4lpzoW0CTax/EMZlmQGokmi0KUyDnN2vDdieLPMgko81W+kaXkXPX/V8Vs/KWh0bdzPjMpr2YxatfFuT8fM1uVO20eXiHsb4YrKeY6Rp0UyIRv0gbDv5pxNW0sVFSarnO0axsBs2+G3EjHMqXRjALHWjYDuxTUdTTw1cksbTR6cYcaIt/uGOTXUkUMb6myuoCt2ca6V8raq09HTbQ0tL54gld6SOuIIj02TWW29PoOGrqxoqvLSQLgCRW22wYoZKaKmjn4uiOAqs34R078aipqqOdNaItW7Kw0+q2DUxyI9Kh1a8X5V2vbRW3fjjVXHSQ1SprGWsRVmjH4r7ujFnzCmXyet/aDmdeDLW8SlgR1RJagoQSQDs9eHp6CenfUbGjgI5HoGKLKkb+PKPYvx8zS18W+FrkdodI9WI80SrqI1niSxgawNtx8bEj04cLNNDpbeRbZyr9Xow1Lr5lvMs+mAu8JoWta1rYoqiKtnpWpotR5MLy02bNo7ujAgjr6pANMXsm422c38IxDDJNMdWZW09lyzuHJ3fhxPaWoml0ToKGVfvDo3t/EOIKLMyWPGWqnjBFtt+SbePRiGpieaDVspEa2K2Cqtto/ANuIo4aqcauoE6sVQncRbm7d/ThctSpmGhNr45tl43vcWG63diqSorKiSaoaNmqOTpXTd0Ww9q6oEbRtHq7JbbGEPR+FfVhpJa6pOnscWSzDQVCN3SEGKvMNc6xiI6zT3W02f9WKqvl3zNcDsjoHq80MlrHtDIfo7n6rdn0+eOS0b3hjP0hx9Zuz6POR5ZmkmjWDkxTt9r3Hv9/nJcsyuTSrDyZZ1+y7h3+7zyUedFpoBsWq3sv5uvCT00yTwtudDceYeepmSCFd7ubDD0eSloYNzVW5m/L1fuGsoKp4D0qOa3iMKma0Vj0zUx/SfnganMoVbszeTPtxpRusi9am/BpSOsa9bG2DrsyhZuzD5Q+zDJlVFc9E1Sf0j541lfVPOehTzV8B+6XUkHuxbjMturTOLsST3/wCF/wD/xAApEAEAAQMDAwMEAwEAAAAAAAABEQAhMUFhgVFxkRAwsaHB4fAgQNFg/9oACAEBAAE/If8AltsHTVZm11/BW2Dov6kHPYNHcbHNHS5GBHf7HKj0I0n5McULONOPB6K3jTjw0elGk/BnmnpchInt9zlUnHYNPYbPHvgoAlcBSsndoXVads9qBI8R57AIHibKEk7tC6rTtnvQUiQmR9wFYLtYjdew0D992KgyzEzX9mb1gf17DUP33ZSGGz7do0Q7HlbLG/b0tQqktz0HUoblhOzgLrL6y9FESS1bCXx1qYLkmykYx6AJng3CgCZtmntZXJC9lvcW3oO1C/hYDsP0elo0Q7PgbLO/f2pJAIzBfiC0CI8tB6RB1ooD8qfF8vqPBu5mXcE/Slakx1JnkuqeTAuZiZb0hOye59jUx9wgglGOHuFBJRPrc/ZQEXRuzPoBA+WqqbRasyX5kPskX0RhjU+PD6qwwVsD5GswiehEv1X0Bkk4h2j6wxakrn81crKulWnlgLLMEUZQMnq4SeY4oh3k3GPhWq0ULrH2KLgEPW74Yl4UcXhr2n1G30KAzqfHx7M1QH3n8HHqNi1LVj3uOKARPR/y0if8X7hFfANFLrOzPyQ+Skj4CEe7CaAsRHov8nipYW6EB9KN5kN6qR5KEziiIQlNRyf2KhyqZEZn6kNSPvP4OfYfFAeaLeADYIKjmRDbBqUjHNUjglREWJqC8xOUkieCgpt58infXmH1io0gJLQiET+Xoi1QK8I3BgTRKzLHedwTFqmbzRJOHwIBesTHF6IkOypxVxLvKfUdOacckJPRlqx63t+wCRT5oHx/OPTXfD0ioNDEHmJ8VHE9CTDn7han7EJORAuZxm1Qt47EDYLcGvXvFJXRIHJ1pkRMItaBUUQE9mT0M6NY1AE8vNQfYxFGHoQtOs+NTKzA5pgJWBXahiG1CBrtViT0Q7I+X83wQHimnnsQk0qBVoZCCOpJzfNERqpp5gvJvTWVOWJK0SzqOFLsSVsMdFqj2WgsygmdF96jEVaxuY62KvOnhzH1SUj7g8nx65nNyiYu6TCSE1uqUguqAvbZh4KWCHIDPtZeKWA22tpgkMRbxQvGdyFE1kYdkqZDJFd7NpawUNh5BXrJxYh1vin3hA2CWnzQPn2J6gXefyc1HiIMiI3QDnempzgrNIA4uGulQPyHECG4J5rC8xTZEP0NJYWCvseMUAiVjEBZE/hTOyEboJDpn2oZwCplEeuXZqEoHJTYtCbtulSZYBvMmfpNMEbomQ7gxvT/AEihyOIJs/5SjXrXgWx6uV6sDKsmykPJSwmlzrbRuEz3Kz0LvP5OPZBuYEOTB8+WjOCPIUiOSWKQ8ufNWSQJ60RRYNxJN9ZPNW4kmKlRetED4OyQYdqnYeQucRObqnYmljSwFtvVKQ8NHEXmH4atJgR6JNYOCVMtLTC23CjbjAQsIZMggoUQVkRhF2UO51qfFDFzMZ4ZKiAEZ7b1S2DHioaG/wDL2zguNAXsqB4PnwezNglG5bcySnkFFzSuRhs8qS1pDlW8qQIg6FKcMdqCHQjEa0pYsI6KVLGOjarHpCqne1RkzpVpKVi7vCRgWw0MT4ZW4DCLeehRDEjCVFADhMC+KkCkOKqDdTVPFOnCesTc2IerShcZGYSdFEPRGaZ57oQNBYu2iPFIKaBHGxFtk6GEU2giMNjLkTGkVdQsosSrGZZwVPgNW4bcQD2pijqbLns0b9/eiKOpsOOxZ37e2KhGE1Ks/QrYaJ++7Pt3+oVsNU/fdhVKsrq+4MMlmrNUEQ+gyd896Es8z57AJnmPKWrroh9Bk757Usst335Dcyye42acK4JAe/2OFHhRrPwZ4qd+aceT0235x9aPAjWfkxzRkuCADt9zhUBuZZHYbH9TdhSivsbXzW7ClP8Ay/8A/9oADAMBAAIAAwAAABDzzzzzzzzzzzzzzzzzzjDzzzzzzzzzAwywxjTzzzzyz3TjXaIzzzzzzyv+jWZLxTzzzzawuY3pjzTzzyyK6Vzt5JSTzzzwurIHklKJzzzzxiwyzxzxhzzzzyxTzzzzwTzzzzzzzwihzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz/8QAJxEBAAIBAwIFBQEAAAAAAAAAAREhAEFRYTGBIHGRodEQMFBgsfD/2gAIAQMBAT8Q/FETeOpFmyRaQkp1KRs2+l7dBiERUJLYm9iPGCXRtDKHWGIkLjYcrvgVMqQbIkEm7itTxmClaxCs0OSh7hORyjFUtsGhtMWXGScGz0KiM2qRrTqnGJgAN4gHkDtjKZ67chjhZOH7AqEoxOzNxcYBtjhlwhEdaxcRUxso9g+udYSnnE+grAOth2l/sYe6DyoEF4FidANvGigYIKEPs4hhLWPbFjcPzGVE4Idj5DBE6MT/ALtiKnsn86+IVSYsV1wBs+cAVtkuDFKnXFI9MWZ1/Rf/xAApEQEBAAICAQMDAgcAAAAAAAABEQAhMUGRUWFxIIGxEKEwUGDB0eHx/9oACAECAQE/EP5XcDE/RGCI/wC8nCadXFIhdh5Z/AUCuFleXfnNQC5sHiN/b/v7Y0HQeevEMAfUfwP4frUFclnVKA02Cks3GPtnMm+D8TI13Qf5fvhQnlX1+dG+LnwqR06g6Y0RH0xlDtXxPrEGChXiujy6yApAQXDSgAeLAW13ixRoR44jQWibpDrWXoJm0QlTg7lvvOsYRJ36+P7/AGneMik1U0QBveiJva63T4RwaLDag0CEtrHBCqhs19243BV1rn6jTJpHYnuYNzSgq9TtWHRwdYGpHIXsjXHa62MzbAhNnvYDoYHB1vNd2TauznYad8U1WS40rFT9h8RT4MMIykqnoBddkJvHgpSFWIxLUKcXXU/oX//EACkQAQEAAgEDBAICAwADAAAAAAERACExQVFhEDBxgZGhsdEgQGDB4fD/2gAIAQEAAT8Q/wCWUn21z/AZ9/8Ag4Ep2xz/AAn+onEoNd1YfeF6XGnQBw8BN7IHjAw/5Le9dvgGcRPhP6A9OYnyn9CYcP8Agt712+CYU6COHgInYE84DrUGm6sfvKdZ77tnQFV7GChkY88A2nbvds7gFkLvWHK8q7Xb7E0Ijdqx4TkTY7HBAyseeUbDv1mm9K2cgIj2fcBAowAquHfEViuW5ZsHs9Ji8DIQaSnU7ezGlLzMH2BjRcNwTaHdkjAgxEiPtiwesFYLqadxXzx1RbygdQkJO5FK1g2l0IQeLAFqcjr1gsm6eQeoE7oME03ExQUyhMgQU49AmyG06kVa1rUK6cSnIE1sAUpQqSuKBXRj5ZmhKMTcYfLl9BYnSCsF0dOxj4+zsKaJAt/sSB1zgBYKWFeq8q7VV59BT5i+sANohm5yfC/YeoGhAppPiLsO+fBmiLpqf4h+fEDrQxdnEDs5OuAajDlAj9YtNTFAI+Qr5fGIBKXSEB8v7Y9zOp3VT8+noCEFsY9E5HkQemamkiQBf6EqdPZBu7YAIL5W3g9VGBisHanHQfDk+YkvQMEgXS6SkZ4HlSwrlCLfMvdCWd4YyB8KFAg2A8sJ4zaUFaUHkT8nCXAS5Gm/DZUgEvC1e5V4ExelN2Kr8h8bzg1+2wEH/wA6+ohzeQDXfCW8j2SJNe9rEPkD8B6kcPYK6Lu4Xivzh1JoMn1d/OX5PmqIAUKU0Kg4+QdWQSOwEas8WXrHJ4TkD1q5JCHoKUPJsTwemIRCL2v0CPozQ6SZV/DkznmVM5XyLikM6Orz81ZwTNHIZ+//AHeonnd0AE8o/gvYTiJj3QH854bjMb9AZehEMkptopXQXaZrIclvk2PIL4xAwZcX7wO5QIrcAkxKp8/4cxj8NDP1+oxywUYA1HCq2K2X0aIYOW0gAyjrdZopgCKQsi1K0BpMuEEmZKupnhK2Sr4WMV2YXxQ0bgbYXgNXUWTKWw3YBU1KmrooV9BujPu5fpcTkYZ3SP8AH+fRXWO270cTos2wdx18TplytiRaejXlQHRm/MxldGwN1FLwTDxFVmkIETVFtdLB/wB9kMaD1HuY671hByXudsQ6R/0iLBptOp39ERDQUNXKFQ8st9kIGl0LLqIRhzJrklADZMK+DQYopYEXsHLhHgG44AJJV+chbspHk7+nT3QO2r/MKRDHuhP4yuhT3MP0mEHdoHHoELKNQBBgawk1dht6aRoTaZtaPZYKeuHJB0twRxk+ziaEBQ10JnfwGg1ooGHaUmsQ5o9dS8GCHmL3wo1SAA8O9iVHq4PVDrVNRjaHCKVyPh5WFzBaRTsuDpEznIXUMDunTFeKqb3HOh8VNGIZVClohNaBC60x4cYGn3Ja+YuTDpuQbakPhCSPJMEgMLRvARsjdlpnguMzv0DgcgGHdK/z7AhndEMV8s/AY8UYZcuGoy6a4AoUpUad5TZy6MT8i0MAdGTHYy7MFAqJKGIg76dlyYY3RNsibtEF6qu7gPyRFrFK3wEdjVofdiJP+fuKOBdzFtEhhJppPQxThzT0HwBW0jkWB3lGa8Doo6W9u5k4u3in/ID3IyytJ2yo2O8Ip0S5AucDYQtmQoncDad8F2R5SVjQpsUcBPN/JLv0jscBPJgBjuiQCeS/gvZJWbKCQXwkPJincxivkUvr5iBd8egjThdLodLUxPnwgjT7xMbKKjii0KhOS9toTqgtLCABWON5TClgwtKoIO5TCJSot6bDFhoCMaCCU5UBjG7Zs7hilziLiQAGDdXhF3D9UiN1LTprxhmaIwlbHB6j0jKUOsyFV1guyfDGU9H2AkdEg9aTkxGwwztqwDQmLGFecQoQE0F6c5HDdu8wBVfKwe77OpZIkS3+pUemXbmhCkXWLhoEueQ3McepQ0ILXeFI2KJ3u39MVANZVEjkNUF8ojsyfTw5pfbiU6CEGZssYM5Q0BIAmuMPN0b14oAEHrvOMSYWlGqBEFLoTAgLGJp9BT1S2iJq5CJTIQlCJEmdMxobYMEOO6VuTBsyXCC0XesACMAh/VFAVRAiQAtHpGutIDfAKx5mshBqQjICz5dghd5tWSJEF/uUXr7RmJ7CqqvC77Gm+Pui4vuKiKcivcQ1z9pyzqJEe+GPDFON0Y8C9nuQhw1TjDcvhTuycs6qVXu+4hIg0R2OFJ4fHaAaPbTNl6i2ErvSnCcI7HT7EAwldqV5XgDa6MKGa+e0o2e+O6J2jIo1VqvvzOcCm6EfvFOkwn2CmHdQnlTxgYd8FvaG3yTBnDZT+xPRYN8if2gzqw7Le0NvkGMughkd1N8IecCHOB3dCH1gvW/6hwC4YvyZ4JT/AMFh4hcuX5f+X//Z" alt="LAN Studios"/>
+    LAN Studios
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Start a Project</a>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring-2"></div>
+
+  <div class="hero-body">
+    <div class="hero-kicker">Full-Stack Digital Lab</div>
+    <h1 class="hero-h1">Build<br/>The <em>Future</em><br/>Ship Fast</h1>
+    <p class="hero-sub">From AI-powered systems to cinematic 3D — we research, design, and engineer the tools that give your business an unfair competitive edge.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-lime">Explore Our Lab</a>
+      <a href="#contact" class="btn-ghost">Start a Project →</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">70%</div><div class="hstat-label">Efficiency Gain</div></div>
+      <div class="hstat-div"></div>
+      <div><div class="hstat-num">6</div><div class="hstat-label">Service Pillars</div></div>
+      <div class="hstat-div"></div>
+      <div><div class="hstat-num">1</div><div class="hstat-label">Unified Pipeline</div></div>
+      <div class="hstat-div"></div>
+      <div><div class="hstat-num">∞</div><div class="hstat-label">Scalability</div></div>
+    </div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Web Engineering<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">3D Animation<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">AI Integration<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Digital Twins<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Technical SEO<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Corporate Training<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Systems Architecture<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Process Automation<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Web Engineering<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">3D Animation<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">AI Integration<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Digital Twins<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Technical SEO<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Corporate Training<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Systems Architecture<span class="ticker-sep"> ✦ </span></span>
+      <span class="ticker-item">Process Automation<span class="ticker-sep"> ✦ </span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="s-label">Who We Are</div>
+    <div class="about-layout">
+      <div class="about-left reveal">
+        <div class="about-tagline">Where <em>Learning</em><br/>Meets <em>Creation</em></div>
+        <p class="about-body">LAN Studios is a full-stack digital lab based in Navi Mumbai, India. We were founded on a single belief: that the gap between imagination and execution should be zero. We don't just build software — we research, prototype, and ship the technology that gives businesses an unfair edge.</p>
+        <p class="about-body">Our name reflects our DNA — a tight-knit network of specialists who think like researchers, work like engineers, and communicate like creatives. Every project we take on is treated as a lab experiment: hypothesis, iteration, result.</p>
+        <div class="about-values">
+          <div class="about-val"><div class="about-val-icon">🔬</div><h5>Research-First</h5><p>Every solution starts with deep research, not assumptions.</p></div>
+          <div class="about-val"><div class="about-val-icon">⚡</div><h5>Speed & Quality</h5><p>AI-augmented workflows that cut time without cutting corners.</p></div>
+          <div class="about-val"><div class="about-val-icon">🔗</div><h5>Unified Pipeline</h5><p>UI/UX, 3D, AI/ML, and DevOps in one coherent team.</p></div>
+          <div class="about-val"><div class="about-val-icon">📐</div><h5>Precision-Built</h5><p>Production-grade code and design, built to last years not months.</p></div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-founded reveal" style="transition-delay:.08s">
+          <div class="founded-num">2023</div>
+          <div class="founded-text"><h5>Founded in Navi Mumbai</h5><p>Started as a creative lab, evolved into a full-stack engineering studio. Operating across web, 3D, AI, and enterprise training.</p></div>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.12s"><div class="team-avatar">👨‍💻</div><div class="team-info"><h4>Engineering Team</h4><span>Full-Stack &amp; AI</span><p>React, Node.js, Python, LLM integration specialists.</p></div></div>
+        <div class="team-card reveal" style="transition-delay:.16s"><div class="team-avatar">🎨</div><div class="team-info"><h4>Creative &amp; 3D Team</h4><span>Design &amp; Animation</span><p>Blender artists, UI/UX designers, and motion designers.</p></div></div>
+        <div class="team-card reveal" style="transition-delay:.20s"><div class="team-avatar">📊</div><div class="team-info"><h4>Growth &amp; Strategy</h4><span>SEO &amp; Market Authority</span><p>Technical SEO experts turning visibility into growth.</p></div></div>
+        <div class="team-card reveal" style="transition-delay:.24s"><div class="team-avatar">🎓</div><div class="team-info"><h4>The Academy Team</h4><span>Training &amp; HR Tech</span><p>Instructional designers and platform builders.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div><div class="s-label">What We Do</div><h2>Our Core<br/>Capabilities</h2></div>
+      <p class="s-desc">Architecting enterprise-grade solutions through 6 integrated pillars — where technical depth meets creative ambition.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal" data-n="01"><div class="svc-card-line"></div><div class="svc-icon">🏗️</div><div class="svc-tag">Web &amp; Mobile</div><h3>Systems Architecture</h3><p>Scalable, resilient backend and frontend systems built for performance — designed to handle massive growth without friction.</p></div>
+      <div class="svc-card reveal" data-n="02" style="transition-delay:.08s"><div class="svc-card-line"></div><div class="svc-icon">🎨</div><div class="svc-tag">3D &amp; Animation</div><h3>Visual Communication</h3><p>Strikingly beautiful 3D visuals, product renders, and cinematic animations that communicate complexity with elegance.</p></div>
+      <div class="svc-card reveal" data-n="03" style="transition-delay:.16s"><div class="svc-card-line"></div><div class="svc-icon">🤖</div><div class="svc-tag">AI &amp; Automation</div><h3>Applied Intelligence</h3><p>Practical AI/ML integration and automation pipelines that eliminate bottlenecks and unlock compounding efficiency.</p></div>
+      <div class="svc-card reveal" data-n="04" style="transition-delay:.08s"><div class="svc-card-line"></div><div class="svc-icon">🌐</div><div class="svc-tag">Digital Twins</div><h3>Interactive Environments</h3><p>Immersive digital experiences, virtual showrooms, configurators, and real-time 3D simulations.</p></div>
+      <div class="svc-card reveal" data-n="05" style="transition-delay:.16s"><div class="svc-card-line"></div><div class="svc-icon">📈</div><div class="svc-tag">SEO &amp; Growth</div><h3>Performance Growth</h3><p>Technical SEO, site performance, and market visibility strategies that turn your digital presence into a growth engine.</p></div>
+      <div class="svc-card reveal" data-n="06" style="transition-delay:.24s"><div class="svc-card-line"></div><div class="svc-icon">🎓</div><div class="svc-tag">Training &amp; HR</div><h3>The Academy</h3><p>Custom training platforms, workforce enablement tools, and educational systems that scale your team's capabilities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SCROLL STRIP ════ -->
+<div class="scroll-strip">
+  <div class="scroll-inner">
+    <span class="scroll-item">Research<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Design<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Engineer<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Launch<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Scale<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Iterate<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Dominate<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Research<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Design<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Engineer<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Launch<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Scale<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Iterate<span class="scroll-dot"></span></span>
+    <span class="scroll-item">Dominate<span class="scroll-dot"></span></span>
+  </div>
+</div>
+
+<!-- ════ WHY ════ -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="s-label">Why Choose Us</div>
+    <h2>Built for<br/>Competitive<br/>Advantage</h2>
+    <div class="why-layout">
+      <div class="why-left">
+        <div class="why-item reveal"><div class="why-num">01</div><div><h4>Continuous Tech Research</h4><p>We don't just use tools — we research and adopt the tech that gives you an unfair competitive advantage, ahead of the curve every time.</p></div></div>
+        <div class="why-item reveal" style="transition-delay:.08s"><div class="why-num">02</div><div><h4>70% Efficiency Gain</h4><p>Our AI-first approach delivers faster and cheaper outputs than traditional agencies — without cutting corners on quality.</p></div></div>
+        <div class="why-item reveal" style="transition-delay:.16s"><div class="why-num">03</div><div><h4>Scalable Codebases</h4><p>Every system we deploy is built with production-grade security and precision, designed to handle massive growth from day one.</p></div></div>
+        <div class="why-item reveal" style="transition-delay:.24s"><div class="why-num">04</div><div><h4>Unified Pipeline</h4><p>One of the few labs capable of syncing UI/UX, 3D, AI/ML, and Full-Stack Engineering in a single, coherent workflow — zero handoff chaos.</p></div></div>
+      </div>
+      <div class="why-right reveal" style="transition-delay:.1s">
+        <div class="metrics-panel">
+          <div class="metrics-title">// Delivery Metrics</div>
+
+          <!-- 2×2 radial dials -->
+          <div class="metric-grid">
+
+            <!-- Dev Speed 92% → offset = 204 - (204*0.92) = 16.3 -->
+            <div class="metric-dial">
+              <div class="dial-wrap">
+                <svg class="dial-svg" viewBox="0 0 80 80">
+                  <circle class="dial-track" cx="40" cy="40" r="32.5"/>
+                  <circle class="dial-fill" cx="40" cy="40" r="32.5" style="--offset:16"/>
+                </svg>
+                <div class="dial-center">
+                  <span class="dial-num">92%</span>
+                </div>
+              </div>
+              <div class="dial-label">Dev<br/>Speed</div>
+            </div>
+
+            <!-- Client Satisfaction 97% → offset = 204 - (204*0.97) = 6.1 -->
+            <div class="metric-dial">
+              <div class="dial-wrap">
+                <svg class="dial-svg" viewBox="0 0 80 80">
+                  <circle class="dial-track" cx="40" cy="40" r="32.5"/>
+                  <circle class="dial-fill cyan" cx="40" cy="40" r="32.5" style="--offset:6"/>
+                </svg>
+                <div class="dial-center">
+                  <span class="dial-num" style="color:var(--electric)">97%</span>
+                </div>
+              </div>
+              <div class="dial-label">Client<br/>Satisfaction</div>
+            </div>
+
+            <!-- On-time 88% → offset = 204 - (204*0.88) = 24.5 -->
+            <div class="metric-dial">
+              <div class="dial-wrap">
+                <svg class="dial-svg" viewBox="0 0 80 80">
+                  <circle class="dial-track" cx="40" cy="40" r="32.5"/>
+                  <circle class="dial-fill green" cx="40" cy="40" r="32.5" style="--offset:25"/>
+                </svg>
+                <div class="dial-center">
+                  <span class="dial-num" style="color:#22c55e">88%</span>
+                </div>
+              </div>
+              <div class="dial-label">On-Time<br/>Delivery</div>
+            </div>
+
+            <!-- Cost Efficiency 70% → offset = 204 - (204*0.70) = 61.2 -->
+            <div class="metric-dial">
+              <div class="dial-wrap">
+                <svg class="dial-svg" viewBox="0 0 80 80">
+                  <circle class="dial-track" cx="40" cy="40" r="32.5"/>
+                  <circle class="dial-fill amber" cx="40" cy="40" r="32.5" style="--offset:61"/>
+                </svg>
+                <div class="dial-center">
+                  <span class="dial-num" style="color:#f59e0b">70%</span>
+                </div>
+              </div>
+              <div class="dial-label">Cost<br/>Efficiency</div>
+            </div>
+
+          </div><!-- /metric-grid -->
+
+          <!-- bonus stat strip -->
+          <div class="metric-row-stats">
+            <div class="mstat"><div class="mstat-num">2+</div><div class="mstat-label">Years Active</div></div>
+            <div class="mstat"><div class="mstat-num c">6</div><div class="mstat-label">Pillars</div></div>
+            <div class="mstat"><div class="mstat-num">∞</div><div class="mstat-label">Scale</div></div>
+          </div>
+
+          <div class="tag-cloud">
+            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Three.js</span><span class="tag">Python</span><span class="tag">Blender</span><span class="tag">LLM</span><span class="tag">Webflow</span><span class="tag">AWS</span><span class="tag">Node.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROCESS ════ -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="process-header">
+      <div class="s-label">How We Work</div>
+      <h2>Simple. Transparent.<br/>Relentless.</h2>
+      <p class="s-desc" style="margin:14px auto 0">Lean and iterative — so you see real results fast, not at the end of a waterfall.</p>
+    </div>
+    <div class="process-track">
+      <div class="p-step reveal"><div class="p-step-circle"><span class="p-step-emoji">🔍</span></div><h4>Discovery</h4><p>We dive into your goals, audience, and technical landscape to map out the right strategy.</p></div>
+      <div class="p-step reveal" style="transition-delay:.1s"><div class="p-step-circle"><span class="p-step-emoji">✏️</span></div><h4>Design &amp; Proto</h4><p>Rapid wireframes and interactive prototypes validated before a single line of production code.</p></div>
+      <div class="p-step reveal" style="transition-delay:.2s"><div class="p-step-circle"><span class="p-step-emoji">⚡</span></div><h4>Build &amp; Iterate</h4><p>Agile sprints with continuous delivery — you see progress weekly, not at the end.</p></div>
+      <div class="p-step reveal" style="transition-delay:.3s"><div class="p-step-circle"><span class="p-step-emoji">🚀</span></div><h4>Launch &amp; Scale</h4><p>Seamless deployment with ongoing monitoring, optimisation, and support baked in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROJECTS ════ -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="projects-header">
+      <div><div class="s-label">Our Work</div><h2>Featured<br/>Projects</h2></div>
+      <div class="proj-filters">
+        <button class="proj-filter active">All</button>
+        <button class="proj-filter">Web</button>
+        <button class="proj-filter">3D</button>
+        <button class="proj-filter">AI</button>
+        <button class="proj-filter">Training</button>
+      </div>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card featured reveal">
+        <div class="proj-thumb"><div class="proj-thumb-bg" style="background:linear-gradient(135deg,#0d1a02,#1a3304,#0d2200)"></div><span class="proj-thumb-icon">🏗️</span></div>
+        <div class="proj-body"><div class="proj-tags"><span class="proj-tag">Web Engineering</span><span class="proj-tag">AI Integration</span><span class="proj-tag">Featured</span></div><h3>Enterprise SaaS Platform</h3><p>A full-stack business management platform with AI-powered analytics, real-time dashboards, and multi-tenant architecture — deployed for a 500+ user organisation. Built with React, Node.js, and LLM features for smart document processing.</p></div>
+        <div class="proj-footer"><span class="proj-year">2024</span><div class="proj-arrow">→</div></div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.08s">
+        <div class="proj-thumb"><div class="proj-thumb-bg" style="background:linear-gradient(135deg,#00181a,#00282e,#001218)"></div><span class="proj-thumb-icon">🎥</span></div>
+        <div class="proj-body"><div class="proj-tags"><span class="proj-tag">3D Animation</span><span class="proj-tag">Cinematic</span></div><h3>Product Launch Reel</h3><p>Cinematic 3D product animation for a consumer electronics brand. Photorealistic renders for a global campaign.</p></div>
+        <div class="proj-footer"><span class="proj-year">2024</span><div class="proj-arrow">→</div></div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.08s">
+        <div class="proj-thumb"><div class="proj-thumb-bg" style="background:linear-gradient(135deg,#1a0a00,#2a1400,#180800)"></div><span class="proj-thumb-icon">🤖</span></div>
+        <div class="proj-body"><div class="proj-tags"><span class="proj-tag">AI/ML</span><span class="proj-tag">Automation</span></div><h3>AI Process Automation</h3><p>Custom LLM pipeline that automated invoice processing for a logistics firm — saving 40+ hours per week.</p></div>
+        <div class="proj-footer"><span class="proj-year">2024</span><div class="proj-arrow">→</div></div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.16s">
+        <div class="proj-thumb"><div class="proj-thumb-bg" style="background:linear-gradient(135deg,#0a0018,#140028,#0c0016)"></div><span class="proj-thumb-icon">🌐</span></div>
+        <div class="proj-body"><div class="proj-tags"><span class="proj-tag">Digital Twin</span><span class="proj-tag">Three.js</span></div><h3>Virtual Showroom</h3><p>Interactive 3D real-time configurator for a furniture brand — letting customers visualise products before purchase.</p></div>
+        <div class="proj-footer"><span class="proj-year">2023</span><div class="proj-arrow">→</div></div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.24s">
+        <div class="proj-thumb"><div class="proj-thumb-bg" style="background:linear-gradient(135deg,#001808,#002812,#001408)"></div><span class="proj-thumb-icon">🎓</span></div>
+        <div class="proj-body"><div class="proj-tags"><span class="proj-tag">LMS</span><span class="proj-tag">Training</span></div><h3>Corporate LMS</h3><p>Custom Learning Management System for a 300-employee firm — with gamification, progress tracking, and compliance reporting.</p></div>
+        <div class="proj-footer"><span class="proj-year">2023</span><div class="proj-arrow">→</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ BLOG ════ -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div><div class="s-label">Lab Blog</div><h2>Insights &amp;<br/>Research</h2></div>
+      <a href="#" class="btn-ghost">All Articles →</a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-featured reveal">
+        <div class="blog-feat-thumb" style="background:linear-gradient(135deg,#0d1a02,#1a3304)">🧠</div>
+        <div class="blog-feat-body">
+          <span class="blog-cat">AI &amp; Automation</span>
+          <h3>How We Cut Client Operational Costs by 70% Using LLM Pipelines</h3>
+          <p>A deep-dive into the architecture, prompting strategies, and integration patterns we used to automate document-heavy workflows — and the lessons learned.</p>
+          <div class="blog-meta"><div class="blog-author"><div class="blog-author-dot">🧑</div>LAN Studios Team</div><span class="blog-date">Apr 2025</span></div>
+        </div>
+      </div>
+      <div class="blog-list">
+        <div class="blog-mini reveal" style="transition-delay:.08s"><div class="blog-mini-icon">🎨</div><div class="blog-mini-info"><span>3D &amp; Design</span><h4>Blender vs Cinema 4D for Product Renders in 2025</h4><p>Apr 2025 · 6 min read</p></div></div>
+        <div class="blog-mini reveal" style="transition-delay:.12s"><div class="blog-mini-icon">📈</div><div class="blog-mini-info"><span>SEO &amp; Growth</span><h4>Technical SEO Checklist for Next.js Apps</h4><p>Mar 2025 · 8 min read</p></div></div>
+        <div class="blog-mini reveal" style="transition-delay:.16s"><div class="blog-mini-icon">🌐</div><div class="blog-mini-info"><span>Web Engineering</span><h4>Why We Moved Our Clients to Edge-First Architecture</h4><p>Mar 2025 · 5 min read</p></div></div>
+        <div class="blog-mini reveal" style="transition-delay:.20s"><div class="blog-mini-icon">🎓</div><div class="blog-mini-info"><span>Academy</span><h4>Gamification Patterns That Work in Corporate Training</h4><p>Feb 2025 · 7 min read</p></div></div>
+        <div class="blog-mini reveal" style="transition-delay:.24s"><div class="blog-mini-icon">🤖</div><div class="blog-mini-info"><span>AI Research</span><h4>RAG vs Fine-Tuning: Choosing the Right Strategy</h4><p>Feb 2025 · 10 min read</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CAREERS ════ -->
+<section class="careers-section" id="careers">
+  <div class="container">
+    <div class="s-label">Join the Lab</div>
+    <h2>Build the Future<br/>With Us</h2>
+    <div class="careers-layout">
+      <div class="careers-left reveal">
+        <p class="s-desc" style="margin-top:14px;max-width:100%">We hire builders, researchers, and creatives obsessed with craft. If you think in systems, ship fast, and care about quality — you'll fit right in.</p>
+        <div class="careers-perks">
+          <div class="perk"><div class="perk-icon">🏠</div><div><h5>Remote-First Culture</h5><p>Work from anywhere in India. We judge output, not hours.</p></div></div>
+          <div class="perk"><div class="perk-icon">🚀</div><div><h5>Fast Growth Track</h5><p>Small team — your work ships fast and your impact is visible.</p></div></div>
+          <div class="perk"><div class="perk-icon">🔬</div><div><h5>Always Learning</h5><p>Budget for courses, tools, and conferences. We stay ahead of the curve.</p></div></div>
+          <div class="perk"><div class="perk-icon">💰</div><div><h5>Competitive Compensation</h5><p>Market-rate salaries plus performance bonuses.</p></div></div>
+        </div>
+      </div>
+      <div class="careers-right reveal" style="transition-delay:.1s">
+        <div class="s-label" style="margin-bottom:20px">Open Positions</div>
+        <div class="job-list">
+          <div class="job-card"><div class="job-info"><div class="job-tags"><span class="job-tag open">Open</span><span class="job-tag">Full-Time</span><span class="job-tag">Remote</span></div><h4>Full-Stack Engineer</h4><p>React · Node.js · TypeScript · AWS · 2+ years</p></div><a href="mailto:hello@lanstudios.gt.tc?subject=Application: Full-Stack Engineer" class="job-apply">Apply</a></div>
+          <div class="job-card"><div class="job-info"><div class="job-tags"><span class="job-tag open">Open</span><span class="job-tag">Full-Time</span><span class="job-tag">Remote</span></div><h4>3D Artist &amp; Animator</h4><p>Blender · Unreal Engine · Motion Design · Portfolio Required</p></div><a href="mailto:hello@lanstudios.gt.tc?subject=Application: 3D Artist" class="job-apply">Apply</a></div>
+          <div class="job-card"><div class="job-info"><div class="job-tags"><span class="job-tag open">Open</span><span class="job-tag">Part-Time</span><span class="job-tag">Remote</span></div><h4>AI/ML Engineer</h4><p>Python · LangChain · RAG Pipelines · LLM Fine-tuning</p></div><a href="mailto:hello@lanstudios.gt.tc?subject=Application: AI/ML Engineer" class="job-apply">Apply</a></div>
+          <div class="job-card"><div class="job-info"><div class="job-tags"><span class="job-tag open">Open</span><span class="job-tag">Full-Time</span><span class="job-tag">Remote</span></div><h4>UI/UX Designer</h4><p>Figma · Prototyping · Design Systems · 1+ years</p></div><a href="mailto:hello@lanstudios.gt.tc?subject=Application: UI/UX Designer" class="job-apply">Apply</a></div>
+          <div class="job-card"><div class="job-info"><div class="job-tags"><span class="job-tag" style="border-color:rgba(200,255,0,.2);color:rgba(200,255,0,.7)">Always Open</span><span class="job-tag">Freelance</span></div><h4>Freelance Collaborators</h4><p>Any skill. If you're excellent at what you do, we want to know you.</p></div><a href="mailto:hello@lanstudios.gt.tc?subject=Freelance Collaboration" class="job-apply">Say Hi</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA ════ -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-glow-l"></div><div class="cta-glow-r"></div>
+      <div class="cta-badge">Ready to build?</div>
+      <h2 class="cta-h">Let's Build Something<br/><em>Extraordinary</em> Together</h2>
+      <p class="cta-p">Tell us what you're working on. We'll tell you exactly how we can take it further, faster — with one unified team.</p>
+      <div class="cta-btns">
+        <a href="mailto:hello@lanstudios.gt.tc" class="btn-lime">Start a Project</a>
+        <a href="#services" class="btn-ghost">Explore Our Work</a>
+      </div>
+      <div class="cta-contacts">
+        <a href="tel:+918451011596" class="cta-contact-link"><div class="cta-contact-icon">📞</div><span>+91 845 101 1596</span></a>
+        <a href="mailto:hello@lanstudios.gt.tc" class="cta-contact-link"><div class="cta-contact-icon">✉️</div><span>hello@lanstudios.gt.tc</span></a>
+        <a href="https://www.google.com/maps?q=19.091148,73.006081" target="_blank" rel="noopener" class="cta-contact-link"><div class="cta-contact-icon">📍</div><span>Navi Mumbai, MH 400703</span></a>
+        <a href="https://www.linkedin.com/company/lan-studios/" target="_blank" rel="noopener" class="cta-contact-link"><div class="cta-contact-icon" style="font-family:sans-serif;font-weight:700;font-size:.7rem;color:var(--lime)">in</div><span>LinkedIn</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        <img src="data:image/jpeg;base64,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" alt="LAN Studios Logo"/>
+        LAN Studios
+      </div>
+      <p>Researching and building the technology that helps businesses stay ahead. A full-stack digital lab with a unified pipeline.</p>
+      <a href="https://www.google.com/maps?q=19.091148,73.006081" target="_blank" rel="noopener" class="footer-location">📍 Navi Mumbai, MH 400703, India</a>
+      <div class="footer-social">
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="https://www.linkedin.com/company/lan-studios/" target="_blank" rel="noopener" class="social-icon" style="font-family:sans-serif;font-weight:700">in</a>
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">f</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="#services">Systems Architecture</a></li><li><a href="#services">Visual Communication</a></li><li><a href="#services">Applied Intelligence</a></li><li><a href="#services">Interactive Environments</a></li><li><a href="#services">Performance Growth</a></li><li><a href="#services">The Academy</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#blog">Lab Blog</a></li><li><a href="#careers">Careers</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:hello@lanstudios.gt.tc">hello@lanstudios.gt.tc</a></li><li><a href="tel:+918451011596">+91 845 101 1596</a></li><li><a href="https://www.google.com/maps?q=19.091148,73.006081" target="_blank" rel="noopener">Navi Mumbai, MH 400703</a></li><li><a href="https://www.linkedin.com/company/lan-studios/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="#contact">Book a Call</a></li><li><a href="#contact">Start a Project</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 LAN Studios. All rights reserved.</p>
+    <p>Navi Mumbai, Maharashtra, India &nbsp;·&nbsp; <a href="#">Designed with precision. Built to last.</a></p>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
